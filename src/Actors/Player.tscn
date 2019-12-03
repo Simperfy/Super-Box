@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://src/Actors/Player.gd" type="Script" id=1]
 [ext_resource path="res://assets/player.png" type="Texture" id=2]
+[ext_resource path="res://assets/machine-gun.png" type="Texture" id=3]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 45, 40 )
@@ -21,16 +22,24 @@ gravity = 3000.0
 [node name="player" type="Sprite" parent="."]
 texture = ExtResource( 2 )
 
+[node name="gun" type="Sprite" parent="."]
+position = Vector2( 61, 8 )
+scale = Vector2( 1.32031, 1.01442 )
+texture = ExtResource( 3 )
+
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2( 0, 8 )
 shape = SubResource( 1 )
 
 [node name="Camera2D" type="Camera2D" parent="."]
 current = true
+zoom = Vector2( 2, 2 )
 limit_left = 0
 limit_top = 0
-limit_bottom = 800
+limit_right = 15600
+limit_bottom = 4100
 smoothing_enabled = true
+smoothing_speed = 10.0
 drag_margin_left = 0.0
 drag_margin_right = 0.0
 
@@ -39,7 +48,7 @@ margin_left = -59.0
 margin_top = -65.0
 margin_right = 61.0
 margin_bottom = -48.0
-text = "Player"
+text = "Bob"
 align = 1
 valign = 1
 

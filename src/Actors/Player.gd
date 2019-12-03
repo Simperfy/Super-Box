@@ -4,7 +4,8 @@ class_name Player
 export var stomp_impulse = 1000.0
 
 func _on_EnemyAreaDetector_area_entered(area: Area2D) -> void:
-	velocity = get_stomp_velocity(velocity, stomp_impulse)
+	if(global_position.y < area.global_position.y):
+		velocity = get_stomp_velocity(velocity, stomp_impulse)
 
 func _on_EnemyAreaDetector_body_entered(body: PhysicsBody2D):
 	queue_free()
