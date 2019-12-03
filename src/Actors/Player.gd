@@ -14,7 +14,6 @@ func _physics_process(delta: float) -> void:
 	var is_jump_btn_released: = Input.is_action_just_released("jump") and velocity.y < 0.0
 	var direction: = get_velocity_direction()
 	velocity       = get_move_velocity(velocity, direction, speed, is_jump_btn_released)
-	#print(velocity)
 	velocity       = move_and_slide(velocity, FLOOR_VECTOR)
 	
 func get_velocity_direction() -> Vector2:

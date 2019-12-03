@@ -43,12 +43,33 @@ smoothing_speed = 10.0
 drag_margin_left = 0.0
 drag_margin_right = 0.0
 
-[node name="Label" type="Label" parent="Camera2D"]
-margin_left = -59.0
-margin_top = -65.0
-margin_right = 61.0
-margin_bottom = -48.0
+[node name="Player Tag" type="Label" parent="Camera2D"]
+margin_left = -32.0
+margin_top = -80.0
+margin_right = 7.0
+margin_bottom = -63.0
+rect_scale = Vector2( 1.5, 1.5 )
 text = "Bob"
+align = 1
+valign = 1
+
+[node name="Bullet Text" type="Label" parent="Camera2D"]
+margin_left = -96.0
+margin_top = -164.0
+margin_right = -45.0
+margin_bottom = -147.0
+rect_scale = Vector2( 3, 3 )
+text = "Ammo: "
+align = 1
+valign = 1
+
+[node name="Bullet Count Text" type="Label" parent="Camera2D"]
+margin_left = 57.0
+margin_top = -164.0
+margin_right = 73.0
+margin_bottom = -147.0
+rect_scale = Vector2( 3, 3 )
+text = "10"
 align = 1
 valign = 1
 
@@ -59,5 +80,8 @@ collision_mask = 2
 modulate = Color( 0.282353, 0.105882, 0.709804, 1 )
 position = Vector2( 0, 8 )
 shape = SubResource( 2 )
+
+[node name="Muzzle" type="Position2D" parent="."]
+position = Vector2( 114, 19 )
 [connection signal="area_entered" from="EnemyAreaDetector" to="." method="_on_EnemyAreaDetector_area_entered"]
 [connection signal="body_entered" from="EnemyAreaDetector" to="." method="_on_EnemyAreaDetector_body_entered"]

@@ -27,6 +27,7 @@ _global_script_class_icons={
 [application]
 
 config/name="Box Jump"
+run/main_scene="res://src/Levels/LevelTempate.tscn"
 config/icon="res://icon.png"
 
 [input]

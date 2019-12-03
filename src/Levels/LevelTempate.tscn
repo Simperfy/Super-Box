@@ -98,7 +98,7 @@ align = 1
 valign = 1
 
 [node name="Player" parent="." instance=ExtResource( 4 )]
-position = Vector2( 140, -50 )
+position = Vector2( 180, 510 )
 speed = Vector2( 500, 1100 )
 
 [node name="Enemy" parent="." instance=ExtResource( 5 )]
