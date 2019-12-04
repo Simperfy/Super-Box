@@ -4,15 +4,15 @@
 [ext_resource path="res://assets/enemy.png" type="Texture" id=2]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 54, 27 )
+extents = Vector2( 55, 27 )
 
 [sub_resource type="GDScript" id=2]
 
 [sub_resource type="RectangleShape2D" id=3]
-extents = Vector2( 48, 20 )
+extents = Vector2( 48, 17 )
 
 [sub_resource type="RectangleShape2D" id=4]
-extents = Vector2( 67, 46 )
+extents = Vector2( 53, 39 )
 
 [node name="Enemy" type="KinematicBody2D"]
 collision_layer = 2
@@ -44,11 +44,12 @@ position = Vector2( 0, -17 )
 shape = SubResource( 3 )
 
 [node name="BulletCollisionDetector" type="Area2D" parent="."]
+modulate = Color( 0.447059, 0.141176, 0.141176, 1 )
 collision_layer = 2
 collision_mask = 16
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="BulletCollisionDetector"]
-position = Vector2( 0, -46 )
+position = Vector2( 0, -41 )
 shape = SubResource( 4 )
 [connection signal="body_entered" from="StompCollisionDetector" to="." method="_on_StompCollisionDetector_body_entered"]
 [connection signal="body_entered" from="BulletCollisionDetector" to="." method="_on_BulletCollisionDetector_body_entered"]

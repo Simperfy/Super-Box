@@ -8,7 +8,7 @@
 extents = Vector2( 45, 40 )
 
 [sub_resource type="RectangleShape2D" id=2]
-extents = Vector2( 47, 42 )
+extents = Vector2( 49, 42 )
 
 [node name="Player" type="KinematicBody2D"]
 position = Vector2( 48, -48 )
@@ -32,6 +32,7 @@ position = Vector2( 0, 8 )
 shape = SubResource( 1 )
 
 [node name="Camera2D" type="Camera2D" parent="."]
+editor/display_folded = true
 current = true
 zoom = Vector2( 2, 2 )
 limit_left = 0

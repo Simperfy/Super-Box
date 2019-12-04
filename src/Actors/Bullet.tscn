@@ -3,10 +3,10 @@
 [ext_resource path="res://src/Actors/Bullet.gd" type="Script" id=1]
 [ext_resource path="res://assets/portal.png" type="Texture" id=2]
 
-[sub_resource type="RectangleShape2D" id=2]
+[sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 20, 12 )
 
-[sub_resource type="RectangleShape2D" id=1]
+[sub_resource type="RectangleShape2D" id=2]
 extents = Vector2( 22, 13 )
 
 [node name="Bullet" type="KinematicBody2D"]
@@ -20,7 +20,7 @@ scale = Vector2( 0.2, 0.2 )
 texture = ExtResource( 2 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource( 2 )
+shape = SubResource( 1 )
 
 [node name="WallCollisionDectector" type="Area2D" parent="."]
 collision_layer = 16
@@ -28,5 +28,5 @@ collision_mask = 10
 
 [node name="WallCollision" type="CollisionShape2D" parent="WallCollisionDectector"]
 modulate = Color( 0, 0.25098, 0.6, 1 )
-shape = SubResource( 1 )
+shape = SubResource( 2 )
 [connection signal="body_entered" from="WallCollisionDectector" to="." method="_on_WallCollisionDectector_body_entered"]

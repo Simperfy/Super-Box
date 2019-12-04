@@ -4,13 +4,13 @@ func _ready():
 	set_physics_process(false)
 	velocity.x = -speed.x
 
-func _on_BulletCollisionDetector_body_entered(body):
+func _on_BulletCollisionDetector_body_entered(body : PhysicsBody2D) -> void:
 	queue_free()
 	
-func _on_StompCollisionDetector_body_entered(body: PhysicsBody2D):
+func _on_StompCollisionDetector_body_entered(body: PhysicsBody2D) -> void:
 	if(body.global_position.y > get_node("StompCollisionDetector").global_position.y):
 		return
-	get_node("CollisionShape2D").disabled = true
+	get_node("CollisionShape2D").set_deferred("disabled", true)
 	queue_free()
 	
 func _physics_process(delta: float) -> void:
