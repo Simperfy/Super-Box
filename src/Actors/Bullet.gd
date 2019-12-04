@@ -2,8 +2,9 @@ extends KinematicBody2D
 
 class_name Bullet
 	
-func _on_WallCollisionDectector_body_entered(body: PhysicsBody2D) -> void:
-	print(body)
+func _on_WallEnemyCollisionDectector_body_entered(body: PhysicsBody2D) -> void:
+	if(typeof(body) == 17):
+		body.queue_free()
 	queue_free()
 	
 func _physics_process(delta: float) -> void:

@@ -19,20 +19,50 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://src/Actors/Bullet.gd"
 }, {
+"base": "Node2D",
+"class": "LevelTemplate",
+"language": "GDScript",
+"path": "res://src/Levels/LevelTempate.gd"
+}, {
+"base": "Node2D",
+"class": "Main",
+"language": "GDScript",
+"path": "res://src/Actors/Main.gd"
+}, {
+"base": "TextureRect",
+"class": "MainMenu",
+"language": "GDScript",
+"path": "res://src/Actors/MainMenu.gd"
+}, {
 "base": "Actor",
 "class": "Player",
 "language": "GDScript",
 "path": "res://src/Actors/Player.gd"
+}, {
+"base": "StaticBody2D",
+"class": "Portal",
+"language": "GDScript",
+"path": "res://src/Actors/Portal.gd"
+}, {
+"base": "StaticBody2D",
+"class": "StaticGun",
+"language": "GDScript",
+"path": "res://src/Actors/StaticGun.gd"
 } ]
 _global_script_class_icons={
 "Actor": "",
 "Bullet": "",
-"Player": ""
+"LevelTemplate": "",
+"Main": "",
+"MainMenu": "",
+"Player": "",
+"Portal": "",
+"StaticGun": ""
 }
 
 [application]
 
-config/name="Box Jump"
+config/name="Super Box"
 run/main_scene="res://src/Levels/LevelTempate.tscn"
 config/icon="res://icon.png"
 
@@ -75,6 +105,8 @@ fire={
 2d_physics/layer_3="coins"
 2d_physics/layer_4="world"
 2d_physics/layer_5="bullet"
+2d_physics/layer_6="portal"
+2d_physics/layer_7="static_gun"
 
 [rendering]
 

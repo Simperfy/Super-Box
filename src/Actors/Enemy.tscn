@@ -9,10 +9,10 @@ extents = Vector2( 55, 27 )
 [sub_resource type="GDScript" id=2]
 
 [sub_resource type="RectangleShape2D" id=3]
-extents = Vector2( 48, 17 )
+extents = Vector2( 53, 20 )
 
 [sub_resource type="RectangleShape2D" id=4]
-extents = Vector2( 53, 39 )
+extents = Vector2( 52, 39 )
 
 [node name="Enemy" type="KinematicBody2D"]
 collision_layer = 2
@@ -29,8 +29,8 @@ shape = SubResource( 1 )
 script = SubResource( 2 )
 
 [node name="VisibilityEnabler2D" type="VisibilityEnabler2D" parent="."]
-position = Vector2( 0, -46 )
-scale = Vector2( 5.4, 4.575 )
+position = Vector2( 0, -46.125 )
+scale = Vector2( 5.4, 4.5875 )
 process_parent = true
 physics_process_parent = true
 
@@ -40,7 +40,7 @@ collision_layer = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StompCollisionDetector"]
 modulate = Color( 0.207843, 0, 0.945098, 1 )
-position = Vector2( 0, -17 )
+position = Vector2( 0, -19 )
 shape = SubResource( 3 )
 
 [node name="BulletCollisionDetector" type="Area2D" parent="."]
@@ -51,5 +51,12 @@ collision_mask = 16
 [node name="CollisionShape2D" type="CollisionShape2D" parent="BulletCollisionDetector"]
 position = Vector2( 0, -41 )
 shape = SubResource( 4 )
+
+[node name="Label" type="Label" parent="."]
+visible = false
+margin_left = -43.0
+margin_top = -129.0
+margin_bottom = -115.0
+rect_scale = Vector2( 2, 2 )
+text = "Enemy"
 [connection signal="body_entered" from="StompCollisionDetector" to="." method="_on_StompCollisionDetector_body_entered"]
-[connection signal="body_entered" from="BulletCollisionDetector" to="." method="_on_BulletCollisionDetector_body_entered"]
